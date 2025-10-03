@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TMF API Directory</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+    <div id="app" class="app-shell">
+        <header class="app-header" role="banner">
+            <div class="title-block">
+                <h1>TMF API Directory</h1>
+            </div>
+            <nav id="breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li aria-current="page">Home</li>
+                </ol>
+            </nav>
+            <div class="toolbar" role="search">
+                <label class="sr-only" for="searchInput">Search resources</label>
+                <input id="searchInput" type="search" placeholder="Search by API name, document, type, or category" autocomplete="off" />
+
+                <label class="sr-only" for="categorySelect">Filter by category</label>
+                <select id="categorySelect" aria-label="Filter by category">
+                    <option value="all">All categories</option>
+                </select>
+
+                <label class="sr-only" for="domainSelect">Filter by domain</label>
+                <select id="domainSelect" aria-label="Filter by domain">
+                    <option value="all">All domains</option>
+                </select>
+
+                <label class="sr-only" for="sortSelect">Sort resources</label>
+                <select id="sortSelect" aria-label="Sort resources">
+                    <option value="name">Sort by name (A-Z)</option>
+                    <option value="type">Sort by type (A-Z)</option>
+                    <option value="date">Sort by published date (newest)</option>
+                </select>
+
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+                    <span class="icon-moon" aria-hidden="true">&#127769;</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="app-main" role="main">
+            <section id="statusBanner" class="status-banner" role="status" aria-live="polite">
+                <div class="spinner" aria-hidden="true"></div>
+                <span class="status-message">Loading resources...</span>
+            </section>
+
+            <section id="detailView" class="detail-view" hidden aria-live="polite"></section>
+
+            <div id="indexView" class="index-view">
+                <section id="resultsSummary" class="results-summary" hidden>
+                    <p><strong id="resultCount">0</strong> APIs found</p>
+                </section>
+
+                <section id="cardGrid" class="card-grid" aria-live="polite" aria-busy="true"></section>
+            </div>
+        </main>
+
+        <nav id="pagination" class="pagination" aria-label="Pagination controls" hidden>
+            <button id="prevPage" type="button" class="pager" disabled>Previous</button>
+            <span id="pageInfo" class="page-info">Page 1</span>
+            <button id="nextPage" type="button" class="pager" disabled>Next</button>
+        </nav>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
