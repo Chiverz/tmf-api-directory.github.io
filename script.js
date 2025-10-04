@@ -1,4 +1,4 @@
-const API_URL = "https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Indexes/index.json";
+const API_URL = "./index.json";
 
 const state = {
     documents: [],
